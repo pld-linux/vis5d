@@ -5,8 +5,6 @@ Version:	5.0
 Release:	2
 License:	GPL
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 Source0:	ftp://iris.ssec.wisc.edu/pub/vis5d-5.0/%{name}-%{version}.tar.Z
 Source1:	ftp://iris.ssec.wisc.edu/pub/vis5d-5.0/%{name}-data.tar.Z
 Source2:	http://www.ssec.wisc.edu/~billh/api50.html
@@ -29,8 +27,6 @@ Program do wizualizacji zmian pogody.
 Summary:	Vis5d - sample data
 Summary(pl):	Vis5d - przyk³adowe dane
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 Requires:	%{name} = %{version}
 
 %description data 
@@ -43,8 +39,6 @@ Przyk³adowe dane.
 Summary:	Vis5d development information
 Summary(pl):	Vis5d - informacje dla programistów
 Group:		Development
-Group(de):	Entwicklung
-Group(pl):	Programowanie
 Requires:	%{name} = %{version}
 
 %description devel
