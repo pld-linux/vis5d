@@ -6,9 +6,13 @@ Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://iris.ssec.wisc.edu/pub/vis5d-5.0/%{name}-%{version}.tar.Z
+# Source0-md5:	d8190bfcd4e2b227dbfe0b7ba57a1a8a
 Source1:	ftp://iris.ssec.wisc.edu/pub/vis5d-5.0/%{name}-data.tar.Z
+# Source1-md5:	01a54cc7e5079dea8432792b037edfdd
 Source2:	http://www.ssec.wisc.edu/~billh/api50.html
+# Source2-md5:	5d0ff6b843f628a2cea2d8badfdfe9fd
 Source3:	http://www.ssec.wisc.edu/~billh/script50.html
+# Source3-md5:	26bec0dffb62a5e2e0a1a766b698c10c
 Patch0:		%{name}-make.patch
 URL:		http://www.ssec.wisc.edu/~billh/vis5d.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
