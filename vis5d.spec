@@ -74,18 +74,15 @@ install OUT* $RPM_BUILD_ROOT%{_datadir}/vis5d/data
 install *.v5d $RPM_BUILD_ROOT%{_datadir}/vis5d/data
 install *.TOPO $RPM_BUILD_ROOT%{_datadir}/vis5d/data
 
-gzip -9nf README README.ps NOTICE PORTING
-
-install README.ps.gz $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}-devel/
-install %{SOURCE2} $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}-devel/
-install %{SOURCE3} $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}-devel/
+install %{SOURCE2} .
+install %{SOURCE3} .
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {PORTING,README,NOTICE}.gz
+%doc README NOTICE PORTING
 %attr(755, root, root) %{_bindir}/*
 
 %files data
@@ -94,6 +91,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_docdir}/%{name}-%{version}-devel/README.ps.gz
-%{_docdir}/%{name}-%{version}-devel/api50.html
-%{_docdir}/%{name}-%{version}-devel/script50.html
+%doc README.ps* api50.html script50.html
