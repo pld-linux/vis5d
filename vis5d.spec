@@ -58,8 +58,8 @@ Informacje potrzebne do tworzenia aplikacji wspó³pracuj±cych z programem Vis5d.
 %setup -q -D -T -c data -a 1
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS" clean
-make CFLAGS="$RPM_OPT_FLAGS" linux-x
+%{__make} CFLAGS="$RPM_OPT_FLAGS" clean
+%{__make} CFLAGS="$RPM_OPT_FLAGS" linux-x
 
 %install
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/vis5d/{data,sample}}
