@@ -12,7 +12,7 @@ Source2:   	http://www.ssec.wisc.edu/~billh/api50.html
 Source3:   	http://www.ssec.wisc.edu/~billh/script50.html
 Patch:		vis5d-make.patch
 URL:       	http://www.ssec.wisc.edu/~billh/vis5d.html
-Buildroot: 	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix	/usr/X11R6
 
