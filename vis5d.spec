@@ -29,10 +29,10 @@ Summary(pl):	Vis5d - przyk³adowe dane
 Group:		X11/Applications
 Requires:	%{name} = %{version}
 
-%description data 
+%description data
 Sample data.
 
-%description -l pl data
+%description data -l pl
 Przyk³adowe dane.
 
 %package devel
@@ -44,7 +44,7 @@ Requires:	%{name} = %{version}
 %description devel
 Vis5d development information. API and script info.
 
-%description -l pl devel 
+%description devel -l pl
 Informacje potrzebne do tworzenia aplikacji wspó³pracuj±cych z
 programem Vis5d.
 
@@ -95,5 +95,5 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_docdir}/%{name}-%{version}-devel/README.ps.gz
-%{_docdir}/%{name}-%{version}-devel/api50.html 
+%{_docdir}/%{name}-%{version}-devel/api50.html
 %{_docdir}/%{name}-%{version}-devel/script50.html
