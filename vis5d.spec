@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files data
 %defattr(644,root,root,755)
-%{_datadir}/vis5d/*
+%{_datadir}/vis5d
 
 %files devel
 %defattr(644,root,root,755)
