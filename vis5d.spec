@@ -10,8 +10,8 @@ Source:    	ftp://iris.ssec.wisc.edu/pub/vis5d-5.0/%{name}-%{version}.tar.Z
 Source1:   	ftp://iris.ssec.wisc.edu/pub/vis5d-5.0/%{name}-data.tar.Z
 Source2:   	http://www.ssec.wisc.edu/~billh/api50.html
 Source3:   	http://www.ssec.wisc.edu/~billh/script50.html
+Patch:     	vis5d-make.patch
 URL:       	http://www.ssec.wisc.edu/~billh/vis5d.html
-Patch:     	vis5d-gets-fix.patch
 Buildroot: 	/tmp/%{name}-%{version}-root
 
 %define	_prefix	/usr/X11R6
@@ -53,53 +53,61 @@ Informacje potrzebne do tworzenia aplikacji wspó³pracuj±cych z programem Vis5d.
 
 %prep
 %setup -q
-%patch  -b .fix
+%patch -p1
 
 %setup -q -D -T -c data -a 1
 
 %build
-make CFLAGS=$RPM_OTP_FLAGS clean
-make CFLAGS=$RPM_OTP_FLAGS linux-x
+make CFLAGS="$RPM_OPT_FLAGS" clean
+make CFLAGS="$RPM_OPT_FLAGS" linux-x
 
 %install
+rm -rf $RPM_BUILD_ROOT
+
 install -d $RPM_BUILD_ROOT%{_bindir}
 install -d $RPM_BUILD_ROOT%{_libdir}/vis5d/data
 install -d $RPM_BUILD_ROOT%{_libdir}/vis5d/sample
-install -d $RPM_BUILD_ROOT/usr/doc/%name-%version
+install -d $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 
 install comp_to_v5d $RPM_BUILD_ROOT%{_bindir}
 install topoinfo $RPM_BUILD_ROOT%{_bindir}
 install v5d* $RPM_BUILD_ROOT%{_bindir}
 install vis5d $RPM_BUILD_ROOT%{_bindir}
-strip $RPM_BUILD_ROOT%{_bindir}/* ||
+
+strip $RPM_BUILD_ROOT%{_bindir}/* || :
 
 install listfonts $RPM_BUILD_ROOT%{_bindir}
 install *.tcl $RPM_BUILD_ROOT%{_libdir}/vis5d/sample
 install OUT* $RPM_BUILD_ROOT%{_libdir}/vis5d/data
 install *.v5d $RPM_BUILD_ROOT%{_libdir}/vis5d/data
 install *.TOPO $RPM_BUILD_ROOT%{_libdir}/vis5d/data
-install $RPM_SOURCE_DIR/api50.html $RPM_BUILD_ROOT/usr/doc/vis5d-5.0/
-install $RPM_SOURCE_DIR/script50.html $RPM_BUILD_ROOT/usr/doc/vis5d-5.0/
-install README $RPM_BUILD_ROOT/usr/doc/vis5d-5.0/
-install README.ps $RPM_BUILD_ROOT/usr/doc/vis5d-5.0/
-install NOTICE $RPM_BUILD_ROOT/usr/doc/vis5d-5.0/
-install PORTING $RPM_BUILD_ROOT/usr/doc/vis5d-5.0/
+
+install %{SOURCE2} $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}
+install %{SOURCE3} $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}
+install README $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}
+install README.ps $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}
+install NOTICE $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}
+install PORTING $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}
+
+gzip -9nf $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}/{README,README.ps,NOTICE,PORTING}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
-%attr(644, root, root) /usr/doc/vis5d-5.0/PORTING 
-%attr(644, root, root) /usr/doc/vis5d-5.0/README 
-%attr(644, root, root) /usr/doc/vis5d-5.0/NOTICE 
+%defattr(644,root,root,755)
+%{_docdir}/%{name}-%{version}/PORTING.gz
+%{_docdir}/%{name}-%{version}/README.gz
+%{_docdir}/%{name}-%{version}/NOTICE.gz
 %attr(755, root, root) %{_bindir}/*
 
 %files data
-%attr(644, root, root) %{_libdir}/vis5d/data/*
-%attr(644, root, root) %{_libdir}/vis5d/sample/*
+%defattr(644,root,root,755)
+%{_libdir}/vis5d/data/*
+%{_libdir}/vis5d/sample/*
 
 %files devel
-%attr(644, root, root) /usr/doc/vis5d-5.0/README.ps
-%attr(644, root, root) /usr/doc/vis5d-5.0/api50.html 
-%attr(644, root, root) /usr/doc/vis5d-5.0/script50.html
+%defattr(644,root,root,755)
+%{_docdir}/%{name}-%{version}/README.ps.gz
+%{_docdir}/%{name}-%{version}/api50.html 
+%{_docdir}/%{name}-%{version}/script50.html
