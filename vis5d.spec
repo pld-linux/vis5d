@@ -13,7 +13,6 @@ Patch0:		%{name}-make.patch
 URL:		http://www.ssec.wisc.edu/~billh/vis5d.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 Vis5D is a software system for visualizing data made by numerical
