@@ -1,0 +1,231 @@
+diff -ur vis5d-5.0.orig/Mesa/Make-config vis5d-5.0/Mesa/Make-config
+--- vis5d-5.0.orig/Mesa/Make-config	Fri Jun 26 17:03:17 1998
++++ vis5d-5.0/Mesa/Make-config	Wed Jul 14 12:22:50 1999
+@@ -484,7 +484,7 @@
+ 	"TK_LIB = libMesatk.a" \
+ 	"AUX_LIB = libMesaaux.a" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O2 -funroll-loops -ansi -pedantic -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM" \
++	"CFLAGS += -funroll-loops -ansi -pedantic -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM" \
+ 	"MAKELIB = ../mklib.ar-ruv" \
+ 	"XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE"
+ 
+@@ -499,7 +499,7 @@
+ 	"TK_LIB = libMesatk.so" \
+ 	"AUX_LIB = libMesaaux.so" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O3 -ansi -pedantic -fPIC -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM" \
++	"CFLAGS += -ansi -pedantic -fPIC -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM" \
+ 	"MAKELIB = ../mklib.linux" \
+ 	"XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE"
+ 
+@@ -511,7 +511,7 @@
+ 	"TK_LIB = libMesatk.so" \
+ 	"AUX_LIB = libMesaaux.so" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O3 -ansi -pedantic -fPIC -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DFX -I/usr/local/glide/include" \
++	"CFLAGS += -ansi -pedantic -fPIC -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DFX -I/usr/local/glide/include" \
+ 	"MAKELIB = ../mklib.glide" \
+ 	"XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE"
+ 
+@@ -524,7 +524,7 @@
+ 	"TK_LIB = libMesatk.a" \
+ 	"AUX_LIB = libMesaaux.a" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O2 -funroll-loops -ansi -pedantic -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DUSE_ASM" \
++	"CFLAGS += -funroll-loops -ansi -pedantic -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DUSE_ASM" \
+ 	"MAKELIB = ../mklib.ar-ruv" \
+ 	"XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE" \
+ 	"ASM_SOURCES = asm-386.S"
+@@ -537,7 +537,7 @@
+ 	"TK_LIB = libMesatk.so" \
+ 	"AUX_LIB = libMesaaux.so" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O3 -ansi -pedantic -fPIC -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DUSE_ASM" \
++	"CFLAGS += -ansi -pedantic -fPIC -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DUSE_ASM" \
+ 	"MAKELIB = ../mklib.linux" \
+ 	"XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE" \
+ 	"ASM_SOURCES = asm-386.S"
+@@ -550,7 +550,7 @@
+ 	"TK_LIB = libMesatk.so" \
+ 	"AUX_LIB = libMesaaux.so" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O3 -ansi -pedantic -fPIC -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DFX -I/usr/local/glide/include -DUSE_ASM" \
++	"CFLAGS += -ansi -pedantic -fPIC -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DFX -I/usr/local/glide/include -DUSE_ASM" \
+ 	"MAKELIB = ../mklib.glide" \
+ 	"XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE" \
+ 	"ASM_SOURCES = asm-386.S"
+@@ -563,7 +563,7 @@
+ 	"TK_LIB = libMesatk.so" \
+ 	"AUX_LIB = libMesaaux.so" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O3 -m486 -fomit-frame-pointer -pipe -ansi -pedantic -ffast-math -fexpensive-optimizations -malign-loops=2 -malign-jumps=2 -malign-functions=2 -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DFX -I/usr/local/glide/include -DUSE_ASM" \
++	"CFLAGS += -fomit-frame-pointer -pipe -ansi -pedantic -ffast-math -fexpensive-optimizations -malign-loops=2 -malign-jumps=2 -malign-functions=2 -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DFX -I/usr/local/glide/include -DUSE_ASM" \
+ 	"MAKELIB = ../mklib.glide" \
+ 	"XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE" \
+ 	"ASM_SOURCES = asm-386.S"
+@@ -577,7 +577,7 @@
+ 	"TK_LIB = libMesatk.a" \
+ 	"AUX_LIB = libMesaaux.a" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O2 -funroll-loops -ansi -pedantic -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DUSE_ASM -D_REENTRANT -DTHREADS -DPTHREADS" \
++	"CFLAGS += -funroll-loops -ansi -pedantic -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X11R6/include -DSHM -DUSE_ASM -D_REENTRANT -DTHREADS -DPTHREADS" \
+ 	"MAKELIB = ../mklib.ar-ruv" \
+ 	"XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE -lpthread" \
+ 	"ASM_SOURCES = asm-386.S"
+@@ -591,7 +591,7 @@
+ 	"TK_LIB = libMesatk.a" \
+ 	"AUX_LIB = libMesaaux.a" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O2 -pedantic -L/usr/X11R6/lib" \
++	"CFLAGS += -pedantic -L/usr/X11R6/lib" \
+ 	"MAKELIB = ../mklib.ar-ruv" \
+ 	"XLIBS = -L/usr/X11R6/lib -lX11"
+ 
+@@ -603,7 +603,7 @@
+ 	"TK_LIB = libMesatk.so" \
+ 	"AUX_LIB = libMesaaux.so" \
+ 	"CC = gcc" \
+-	"CFLAGS = -ansi -pedantic -fPIC" \
++	"CFLAGS += -ansi -pedantic -fPIC" \
+ 	"MAKELIB = ../mklib.linux" \
+ 	"XLIBS = -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXi"
+ 
+@@ -615,7 +615,7 @@
+ 	"TK_LIB = libMesatk.a" \
+ 	"AUX_LIB = libMesaaux.a" \
+ 	"CC = gcc" \
+-	"CFLAGS = -pedantic -funroll-loops -O2 -mcpu=604 -DSHM" \
++	"CFLAGS += -pedantic -funroll-loops -mcpu=604 -DSHM" \
+ 	"MAKELIB = ../mklib.ar-ruv" \
+ 	"XLIBS = -L/usr/X11/lib -lX11 -lXext -lXmu -lXi"
+ 
+@@ -628,7 +628,7 @@
+ 	"TK_LIB = libMesatk.so" \
+ 	"AUX_LIB = libMesaaux.so" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O2 -ansi -pedantic -fPIC -funroll-loops -mieee-fp -DSHM -DMONDELLO" \
++	"CFLAGS += -ansi -pedantic -fPIC -funroll-loops -mieee-fp -DSHM -DMONDELLO" \
+ 	"MAKELIB = ../mklib.linux" \
+ 	"XLIBS = -L/usr/X11/lib -lX11 -lXext -lXmu -lXi -lclgd547x"
+ 
+diff -ur vis5d-5.0.orig/import/Makefile vis5d-5.0/import/Makefile
+--- vis5d-5.0.orig/import/Makefile	Thu Dec 10 16:40:56 1998
++++ vis5d-5.0/import/Makefile	Wed Jul 14 12:20:04 1999
+@@ -190,7 +190,7 @@
+ linux-ppc:
+ 	make targets \
+ 	"CC = gcc" \
+-	"CFLAGS = -c -pipe -O2 -mcpu=604 -DIMPORT "\
++	"CFLAGS += -c -pipe -mcpu=604 -DIMPORT -I/usr/X11R6/include"\
+ 	"F77 = echo" \
+ 	"FFLAGS = " \
+ 	"LINK = gcc" \
+@@ -201,7 +201,7 @@
+ linux-threads:
+ 	make targets \
+ 	"CC = gcc" \
+-	"CFLAGS = -c -pipe -O6 -mpentium -march=pentium -fno-strength-reduce -DLITTLE" \
++	"CFLAGS += -c -pipe -fno-strength-reduce -DLITTLE -I/usr/X11R6/include" \
+ 	"F77 = echo" \
+ 	"FFLAGS = " \
+ 	"LINK = gcc" \
+@@ -212,7 +212,7 @@
+ linux:
+ 	make targets \
+ 	"CC = gcc" \
+-	"CFLAGS = -c -pipe -O2 -m486 -DLITTLE -DIMPORT " \
++	"CFLAGS += -c -pipe -DLITTLE -DIMPORT -I/usr/X11R6/include" \
+ 	"F77 = echo" \
+ 	"FFLAGS = " \
+ 	"LINK = gcc" \
+diff -ur vis5d-5.0.orig/lui5/Makefile vis5d-5.0/lui5/Makefile
+--- vis5d-5.0.orig/lui5/Makefile	Sun Dec 13 00:47:25 1998
++++ vis5d-5.0/lui5/Makefile	Wed Jul 14 12:20:04 1999
+@@ -112,13 +112,13 @@
+ linux-ppc:
+ 	$(MAKE) target \
+ 	"CC = gcc" \
+-	"CFLAGS = -pipe -g -mcpu=604"\  
++	"CFLAGS += -pipe -g -mcpu=604 -I/usr/X11R6/include"\  
+ 	"RANLIB = ranlib"       
+ 
+ linux:
+ 	$(MAKE) target \
+ 	"CC = gcc" \
+-	"CFLAGS = -pipe -g -m486" \
++	"CFLAGS += -pipe -g -I/usr/X11R6/include" \
+ 	"RANLIB = ranlib"
+ 
+ sunos4:
+diff -ur vis5d-5.0.orig/src/Makefile vis5d-5.0/src/Makefile
+--- vis5d-5.0.orig/src/Makefile	Thu Nov 19 13:37:57 1998
++++ vis5d-5.0/src/Makefile	Wed Jul 14 12:20:04 1999
+@@ -336,7 +336,7 @@
+ linux-ppc-mesa:
+ 	$(MAKE) target  \
+ 	"CC = gcc"\
+-	"CFLAGS = -c -O2 -mcpu=604 -w -DUNDERSCORE -DOPENGL -DSINGLE_TASK -I../Mesa/include" \
++	"CFLAGS += -c -mcpu=604 -w -DUNDERSCORE -DOPENGL -DSINGLE_TASK -I../Mesa/include -I/usr/X11R6/include" \
+ 	"AUXOBJS = graphics.ogl.o xdump.o" \
+ 	"LINK = gcc "\
+ 	"LIBS = ../lui5/liblui2.a -L../Mesa/lib -lMesaGL -lMesaGLU -lm -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext"
+@@ -344,16 +344,16 @@
+ linux-opengl:
+ 	$(MAKE) target  \
+ 	"CC = gcc" \
+-	"CFLAGS = -c -pipe -O2 -m486 -w -DUNDERSCORE -DOPENGL -DSINGLE_TASK -DLITTLE" \
++	"CFLAGS += -c -pipe -w -DUNDERSCORE -DOPENGL -DSINGLE_TASK -DLITTLE -I/usr/X11R6/include" \
+ 	"AUXOBJS = graphics.ogl.o xdump.o" \
+-	"LINK = gcc -pipe -O2 -m486" \
++	"LINK = gcc -pipe" \
+ 	"LIBS = ../lui5/liblui2.a -L/usr/X11R6/lib -lGL -lGLU -lm -lX11 -lXext"
+ 
+ 
+ linux-threads-mesa:
+ 	$(MAKE) target \
+ 	"CC = gcc" \
+-	"CFLAGS = -c -O6 -march=pentium -mpentium -w -DLITTLE -DLTHREADS -DUNDERSCORE -DOPENGL -DSINGLE_TASK -I../Mesa/include" \
++	"CFLAGS += -c -w -DLITTLE -DLTHREADS -DUNDERSCORE -DOPENGL -DSINGLE_TASK -I../Mesa/include -I/usr/X11R6/include" \
+ 	"AUXOBJS = graphics.ogl.o xdump.o" \
+ 	"LINK = gcc" \
+ 	"LIBS = ../lui5/liblui.a -L../Mesa/lib -lMesaGL -lMesaGLU -lm -L/usr/X11R6/lib -lX11 -lXext -lpthread"
+@@ -361,7 +361,7 @@
+ linux-mesa:
+ 	$(MAKE) target  \
+ 	"CC = gcc" \
+-	"CFLAGS = -c -O2 -w -DLITTLE -DUNDERSCORE -DOPENGL -DSINGLE_TASK -I../Mesa/include" \
++	"CFLAGS += -c -w -DLITTLE -DUNDERSCORE -DOPENGL -DSINGLE_TASK -I../Mesa/include -I/usr/X11R6/include" \
+ 	"AUXOBJS = graphics.ogl.o xdump.o" \
+ 	"LINK = gcc" \
+ 	"LIBS = ../lui5/liblui2.a -L../Mesa/lib -lMesaGL -lMesaGLU -lm -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext"
+diff -ur vis5d-5.0.orig/util/Makefile vis5d-5.0/util/Makefile
+--- vis5d-5.0.orig/util/Makefile	Mon Sep 28 17:28:21 1998
++++ vis5d-5.0/util/Makefile	Wed Jul 14 12:20:04 1999
+@@ -177,7 +177,7 @@
+ linux-ppc:
+ 	make ctargets \
+ 	"CC = gcc" \
+-	"CFLAGS = -c -pipe -O2 -m486 -DLITTLE -DUNDERSCORE -I../src" \
++	"CFLAGS += -c -pipe -DLITTLE -DUNDERSCORE -I../src -I/usr/X11R6/include" \
+ 	"F77 = f77" \
+ 	"FFLAGS = -c -O" \
+ 	"CLINK = gcc" \
+@@ -188,7 +188,7 @@
+ linux-threads:
+ 	make ctargets \
+ 	"CC = gcc" \
+-	"CFLAGS = -c -pipe -O6 -march=pentium -mpentium -DUNDERSCORE -I../src" \
++	"CFLAGS += -c -pipe -DUNDERSCORE -I../src -I/usr/X11R6/include" \
+ 	"F77 = f77" \
+ 	"FFLAGS = -c -O" \
+ 	"CLINK = gcc" \
+@@ -199,7 +199,7 @@
+ linux:
+ 	make ctargets \
+ 	"CC = gcc" \
+-	"CFLAGS = -c -pipe -O2 -m486 -DLITTLE -DUNDERSCORE -I../src" \
++	"CFLAGS += -c -pipe -DLITTLE -DUNDERSCORE -I../src -I/usr/X11R6/include" \
+ 	"F77 = f77" \
+ 	"FFLAGS = -c -O" \
+ 	"CLINK = gcc" \
