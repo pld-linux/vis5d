@@ -103,12 +103,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644, root, root) /usr/doc/vis5d-5.0/README.ps
 %attr(644, root, root) /usr/doc/vis5d-5.0/api50.html 
 %attr(644, root, root) /usr/doc/vis5d-5.0/script50.html
-
-%changelog
-* Wed Jun  2 1999 Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>
-  [5.0-2]
-- fixes file locations.
-
-* Fri Sep  4 1998 Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>
-- creating RPM,
-- fixing function get() error.
