@@ -30,7 +30,7 @@ Program do wizualizacji zmian pogody.
 Summary:	Vis5d - sample data
 Summary(pl):	Vis5d - przyk³adowe dane
 Group:		X11/Applications
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description data
 Sample data.
@@ -42,7 +42,7 @@ Przyk³adowe dane.
 Summary:	Vis5d development information
 Summary(pl):	Vis5d - informacje dla programistów
 Group:		Development
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Vis5d development information. API and script info.
