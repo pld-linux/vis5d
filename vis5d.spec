@@ -53,7 +53,7 @@ programem Vis5d.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
 
 %setup -q -D -T -c data -a 1
 
