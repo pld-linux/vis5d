@@ -1,5 +1,5 @@
 Summary:	Vis5d weather visualizing system
-Summary(pl.UTF-8):   Program do wizualizacji zmian pogody
+Summary(pl.UTF-8):	Program do wizualizacji zmian pogody
 Name:		vis5d
 Version:	5.0
 Release:	2
@@ -28,7 +28,7 @@ Program do wizualizacji zmian pogody.
 
 %package data
 Summary:	Vis5d - sample data
-Summary(pl.UTF-8):   Vis5d - przykładowe dane
+Summary(pl.UTF-8):	Vis5d - przykładowe dane
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -40,7 +40,7 @@ Przykładowe dane.
 
 %package devel
 Summary:	Vis5d development information
-Summary(pl.UTF-8):   Vis5d - informacje dla programistów
+Summary(pl.UTF-8):	Vis5d - informacje dla programistów
 Group:		Development
 Requires:	%{name} = %{version}-%{release}
 
